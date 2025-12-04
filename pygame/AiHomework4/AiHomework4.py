@@ -5,14 +5,7 @@ from tensorflow import keras
 from tensorflow.keras.callbacks import Callback
 import matplotlib.pyplot as plt
 
-try:
-    # import model1 # 신경망 1 (FCN)
-    # import model2 # 신경망 2 (CNN)
-     import model3 # 신경망 3 (개선 FCN)
-    # import model4 # 신경망 4 (개선 CNN)
-    # import model5 # 신경망 5 (Subclass CNN)
-except ImportError as e:
-    print(f"경고: 모델 파일 임포트 오류 - {e}. 학습을 시작하려면 필요한 모델 파일을 준비하세요.")
+
 
 
 # 과제 요구사항에 따라 학습 시간 제한(10분 = 600초)을 위한 커스텀 콜백 정의
@@ -41,6 +34,15 @@ x_train, x_test = x_train_orig / 255.0, x_test_orig / 255.0
 y_train = keras.utils.to_categorical(y_train_orig, num_classes=10)
 y_test = keras.utils.to_categorical(y_test_orig, num_classes=10)
 
+try:
+    # import model1 # 신경망 1 (FCN)
+    # import model2 # 신경망 2 (CNN)
+     import model3 # 신경망 3 (개선 FCN)
+    # import model4 # 신경망 4 (개선 CNN)
+    # import model5 # 신경망 5 (Subclass CNN)
+except ImportError as e:
+    print(f"경고: 모델 파일 임포트 오류 - {e}. 학습을 시작하려면 필요한 모델 파일을 준비하세요.")
+    
 # 2. 모델 선택
 model = model3.model 
 
@@ -106,3 +108,4 @@ def plot_history(history, metric, title):
 # 그래프 호출: history 객체를 직접 전달하도록 변경
 plot_history(history.history, 'categorical_accuracy', 'Accuracy')
 plot_history(history.history, 'loss', 'Loss')
+
