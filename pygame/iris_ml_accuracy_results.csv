@@ -1,0 +1,4 @@
+Model,Accuracy
+K-Nearest Neighbors,0.9833333333333333
+Decision Tree,0.9666666666666667
+Support Vector Machine (RBF),0.95
