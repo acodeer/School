@@ -37,14 +37,14 @@ y_test = keras.utils.to_categorical(y_test_orig, num_classes=10)
 try:
     # import model1 # 신경망 1 (FCN)
     # import model2 # 신경망 2 (CNN)
-     import model3 # 신경망 3 (개선 FCN)
-    # import model4 # 신경망 4 (개선 CNN)
+    # import model3 # 신경망 3 (개선 FCN)
+     import model4 # 신경망 4 (개선 CNN)
     # import model5 # 신경망 5 (Subclass CNN)
 except ImportError as e:
     print(f"경고: 모델 파일 임포트 오류 - {e}. 학습을 시작하려면 필요한 모델 파일을 준비하세요.")
     
 # 2. 모델 선택
-model = model3.model 
+model = model4.model 
 
 model_name = model.name if hasattr(model, 'name') else "Selected Model"
 EPOCHS = 400
