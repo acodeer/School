@@ -1,0 +1,6 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://songUser:MRsong@cluster0.ae4dcbv.mongodb.net/steamdealview?appName=Cluster0
+server:
+  port: 8080
